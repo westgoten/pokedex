@@ -4,10 +4,11 @@ import {
 	INVALID_PAGE,
 	INVALID_OFFSET_OR_LIMIT
 } from '../utils/consts/errorMessages'
+import INITIAL_PAGE from '../utils/consts/initialPage'
 import { preparePokemons, preparePokemonDetails } from './dataHandlers'
 
-export function getPokemonsByPage(page = 1) {
-	if (page >= 1) {
+export function getPokemonsByPage(page = INITIAL_PAGE) {
+	if (page >= INITIAL_PAGE) {
 		const offset = (page - 1) * ITEMS_PER_PAGE
 		return getPokemons(offset)
 	}

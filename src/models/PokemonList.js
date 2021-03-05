@@ -5,7 +5,6 @@ class PokemonList {
 	constructor(data) {
 		this.count = data.count
 		this.next = data.next
-		this.previous = data.previous
 		this.results = data.results.map((pokemon) =>
 			toPojo(new Pokemon(pokemon))
 		)
