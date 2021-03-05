@@ -1,8 +1,8 @@
-class Stat {
+class PokemonStat {
 	constructor(data) {
 		this.baseStat = data.base_stat
 		this.name = data.stat.name
 	}
 }
 
-export default Stat
+export default PokemonStat

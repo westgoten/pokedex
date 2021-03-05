@@ -4,13 +4,7 @@ import {
 	INVALID_PAGE,
 	INVALID_OFFSET_OR_LIMIT
 } from '../utils/consts/errorMessages'
-
-export function getPokemons(offset = 0, limit = ITEMS_PER_PAGE) {
-	if (offset >= 0 && limit >= 0) {
-		return axios.get(`/pokemon?offset=${offset}&limit=${limit}`)
-	}
-	throw Error(INVALID_OFFSET_OR_LIMIT)
-}
+import { preparePokemons, preparePokemonDetails } from './dataHandlers'
 
 export function getPokemonsByPage(page = 1) {
 	if (page >= 1) {
@@ -20,6 +14,21 @@ export function getPokemonsByPage(page = 1) {
 	throw Error(INVALID_PAGE)
 }
 
+export function getPokemons(offset = 0, limit = ITEMS_PER_PAGE) {
+	if (offset >= 0 && limit >= 0) {
+		return axios.get(`/pokemon?offset=${offset}&limit=${limit}`, {
+			transformResponse: getDataHandlerList(preparePokemons)
+		})
+	}
+	throw Error(INVALID_OFFSET_OR_LIMIT)
+}
+
 export function getPokemonDetails(name) {
-	return axios.get(`/pokemon/${name}`)
+	return axios.get(`/pokemon/${name}`, {
+		transformResponse: getDataHandlerList(preparePokemonDetails)
+	})
+}
+
+function getDataHandlerList(...dataHandlers) {
+	return axios.defaults.transformResponse.concat(dataHandlers)
 }
