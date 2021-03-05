@@ -1,5 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit'
+import pokemonsReducer from './reducers/pokemonsReducer'
 
 export default configureStore({
-	reducer: {}
+	reducer: {
+		pokemons: pokemonsReducer
+	}
 })

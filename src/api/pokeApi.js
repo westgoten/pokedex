@@ -20,6 +20,6 @@ export function getPokemonsByPage(page = 1) {
 	throw Error(INVALID_PAGE)
 }
 
-export function getPokemon(name) {
+export function getPokemonDetails(name) {
 	return axios.get(`/pokemon/${name}`)
 }
