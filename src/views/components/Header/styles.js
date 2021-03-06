@@ -22,6 +22,7 @@ export const Container = styled.header`
 	background-color: ${(props) => props.theme.primaryColor};
 	border-radius: 0 0 20px 20px;
 	font-size: ${DEFAULT_FONT_SIZE};
+	z-index: 5;
 
 	@media (max-width: ${SMALL_WIDTH}) {
 		font-size: ${MEDIUM_FONT_SIZE};
