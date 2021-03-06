@@ -1,26 +1,29 @@
-import { Grid, ChildTest } from './styles'
+import PokemonCard from '../../components/PokemonCard'
+import { Grid } from './styles'
 
 function PokemonsPage() {
 	return (
 		<Grid>
-			<ChildTest />
-			<ChildTest />
-			<ChildTest />
-			<ChildTest />
-			<ChildTest />
-			<ChildTest />
-			<ChildTest />
-			<ChildTest />
-			<ChildTest />
-			<ChildTest />
-			<ChildTest />
-			<ChildTest />
-			<ChildTest />
-			<ChildTest />
-			<ChildTest />
-			<ChildTest />
-			<ChildTest />
-			<ChildTest />
+			<PokemonCard color='purple' />
+			<PokemonCard color='purple' />
+			<PokemonCard color='purple' />
+			<PokemonCard color='purple' />
+			<PokemonCard color='purple' />
+			<PokemonCard color='purple' />
+			<PokemonCard color='purple' />
+			<PokemonCard color='purple' />
+			<PokemonCard color='purple' />
+			<PokemonCard color='purple' />
+			<PokemonCard color='purple' />
+			<PokemonCard color='purple' />
+			<PokemonCard color='purple' />
+			<PokemonCard color='purple' />
+			<PokemonCard color='purple' />
+			<PokemonCard color='purple' />
+			<PokemonCard color='purple' />
+			<PokemonCard color='purple' />
+			<PokemonCard color='purple' />
+			<PokemonCard color='purple' />
 		</Grid>
 	)
 }

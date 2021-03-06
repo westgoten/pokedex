@@ -7,7 +7,7 @@ import {
 
 export const headerHeight = {
 	value: 5.125,
-	unit: 'rem'
+	unit: 'em'
 }
 
 export const Container = styled.header`
