@@ -1,7 +1,28 @@
-import { Container } from './styles'
+import { Grid, ChildTest } from './styles'
 
 function PokemonsPage() {
-	return <Container></Container>
+	return (
+		<Grid>
+			<ChildTest />
+			<ChildTest />
+			<ChildTest />
+			<ChildTest />
+			<ChildTest />
+			<ChildTest />
+			<ChildTest />
+			<ChildTest />
+			<ChildTest />
+			<ChildTest />
+			<ChildTest />
+			<ChildTest />
+			<ChildTest />
+			<ChildTest />
+			<ChildTest />
+			<ChildTest />
+			<ChildTest />
+			<ChildTest />
+		</Grid>
+	)
 }
 
 export default PokemonsPage
