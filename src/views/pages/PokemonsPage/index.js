@@ -2,12 +2,11 @@ import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { fetchPokemonsByPage } from '../../../actions/pokemonsActions'
 import useShallowEqualSelector from '../../../utils/hooks/useShallowEqualSelector'
-import PokemonCard from '../../components/PokemonCard'
 import Loader from '../../components/Loader'
 import ErrorWarning from '../../components/ErrorWarning'
 import INITIAL_PAGE from '../../../utils/consts/initialPage'
 import { TRY_AGAIN } from '../../../utils/consts/errorMessages'
-import { Grid } from './styles'
+import PokemonsGrid from '../../components/PokemonsGrid'
 
 function PokemonsPage() {
 	const dispatch = useDispatch()
@@ -36,16 +35,7 @@ function PokemonsPage() {
 			}
 		/>
 	) : (
-		<Grid>
-			{pokemonList.map((pokemon) => (
-				<PokemonCard
-					key={pokemon.name}
-					name={pokemon.name}
-					imageUrl={pokemon.imageUrl}
-					color='purple'
-				/>
-			))}
-		</Grid>
+		<PokemonsGrid pokemonList={pokemonList} />
 	)
 }
 
