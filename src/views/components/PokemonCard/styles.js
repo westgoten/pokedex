@@ -27,17 +27,21 @@ export const Content = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	justify-content: center;
 	padding: 12px 35px;
 `
 
 export const Image = styled.img`
+	max-width: 97%;
+	height: auto;
 	margin-bottom: 7px;
 `
 
 export const Name = styled.span`
 	font-size: 14px;
 	font-weight: 700;
-	font-family: Inter, Roboto;
+	font-family: Inter, Roboto, default;
 	line-height: 20px;
 	color: ${(props) => props.theme.primaryTextColor};
+	text-transform: capitalize;
 `

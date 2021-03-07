@@ -1,11 +1,11 @@
 import { Container, Content, Image, Name } from './styles'
 
-function PokemonCard(props) {
+function PokemonCard({ name, imageUrl, ...props }) {
 	return (
 		<Container {...props}>
 			<Content>
-				<Image alt='Pokemon image' />
-				<Name>Charizard</Name>
+				<Image src={imageUrl} alt='Pokemon image' />
+				<Name>{name.split('-').join(' ')}</Name>
 			</Content>
 		</Container>
 	)
