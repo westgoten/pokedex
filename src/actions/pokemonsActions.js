@@ -1,4 +1,4 @@
-import { createAsyncThunk } from '@reduxjs/toolkit'
+import { createAsyncThunk, createAction } from '@reduxjs/toolkit'
 import { getPokemonsByPage, getPokemonDetails } from '../api/pokeApi'
 import handleRequestError from '../utils/handleRequestError'
 import INITIAL_PAGE from '../utils/consts/initialPage'
@@ -30,3 +30,5 @@ async function bindImageUrlToPokemons(pokemons) {
 		return pokemon
 	})
 }
+
+export const setInitialPageRequest = createAction('setInitialPageRequest')

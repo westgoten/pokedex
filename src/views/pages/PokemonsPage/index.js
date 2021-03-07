@@ -1,6 +1,9 @@
 import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
-import { fetchPokemonsByPage } from '../../../actions/pokemonsActions'
+import {
+	fetchPokemonsByPage,
+	setInitialPageRequest
+} from '../../../actions/pokemonsActions'
 import useShallowEqualSelector from '../../../utils/hooks/useShallowEqualSelector'
 import Loader from '../../components/Loader'
 import ErrorWarning from '../../components/ErrorWarning'
@@ -17,26 +20,31 @@ function PokemonsPage() {
 		(state) => state.pokemons.pokemonList
 	)
 	const nextPage = useShallowEqualSelector((state) => state.pokemons.nextPage)
+	const isInitialPageRequest = useShallowEqualSelector(
+		(state) => state.pokemons.isInitialPageRequest
+	)
 	const error = useShallowEqualSelector((state) => state.pokemons.error)
 
 	useEffect(() => {
-		if (!nextPage) dispatch(fetchPokemonsByPage({ page: INITIAL_PAGE }))
-		// eslint-disable-next-line
+		if (!nextPage) dispatchPokemonsRequest()
 	}, [])
 
-	return isPending ? (
+	return isPending && isInitialPageRequest ? (
 		<Loader />
-	) : error ? (
+	) : error && isInitialPageRequest ? (
 		<ErrorWarning
 			error={error}
 			buttonMessage={TRY_AGAIN}
-			buttonOnClick={() =>
-				dispatch(fetchPokemonsByPage({ page: INITIAL_PAGE }))
-			}
+			buttonOnClick={() => dispatchPokemonsRequest()}
 		/>
 	) : (
 		<PokemonsGrid pokemonList={pokemonList} />
 	)
+
+	function dispatchPokemonsRequest() {
+		dispatch(setInitialPageRequest(true))
+		dispatch(fetchPokemonsByPage({ page: INITIAL_PAGE }))
+	}
 }
 
 export default PokemonsPage

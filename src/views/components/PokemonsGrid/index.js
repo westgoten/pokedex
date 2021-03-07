@@ -1,4 +1,5 @@
 import PokemonCard from '../PokemonCard'
+import InfiniteScrollDetector from '../InfiniteScrollDetector'
 import { COLORS_IN_ORDER } from '../../../utils/consts/pokemonCardColors'
 import { Grid } from './styles'
 
@@ -13,6 +14,7 @@ function PokemonsGrid({ pokemonList }) {
 					color={COLORS_IN_ORDER[getColorIndex(index)]}
 				/>
 			))}
+			<InfiniteScrollDetector />
 		</Grid>
 	)
 

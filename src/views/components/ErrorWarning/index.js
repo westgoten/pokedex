@@ -1,4 +1,4 @@
-import { Container, Title, Message, Button } from './styles'
+import { Container, Title, Message, ErrorButton } from './styles'
 import { ERROR_OCCURRED } from '../../../utils/consts/errorMessages'
 
 function ErrorWarning({ error, buttonMessage, buttonOnClick }) {
@@ -6,7 +6,7 @@ function ErrorWarning({ error, buttonMessage, buttonOnClick }) {
 		<Container>
 			<Title>{ERROR_OCCURRED}</Title>
 			<Message>{error}</Message>
-			<Button onClick={buttonOnClick}>{buttonMessage}</Button>
+			<ErrorButton onClick={buttonOnClick}>{buttonMessage}</ErrorButton>
 		</Container>
 	)
 }
