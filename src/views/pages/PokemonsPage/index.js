@@ -3,7 +3,10 @@ import { useDispatch } from 'react-redux'
 import { fetchPokemonsByPage } from '../../../actions/pokemonsActions'
 import useShallowEqualSelector from '../../../utils/hooks/useShallowEqualSelector'
 import PokemonCard from '../../components/PokemonCard'
+import Loader from '../../components/Loader'
+import ErrorWarning from '../../components/ErrorWarning'
 import INITIAL_PAGE from '../../../utils/consts/initialPage'
+import { TRY_AGAIN } from '../../../utils/consts/errorMessages'
 import { Grid } from './styles'
 
 function PokemonsPage() {
@@ -22,10 +25,16 @@ function PokemonsPage() {
 		// eslint-disable-next-line
 	}, [])
 
-	return isPending && isPokemonListEmpty() ? (
-		<div>Loading</div>
-	) : error && isPokemonListEmpty() ? (
-		<div>Error</div>
+	return isPending ? (
+		<Loader />
+	) : error ? (
+		<ErrorWarning
+			error={error}
+			buttonMessage={TRY_AGAIN}
+			buttonOnClick={() =>
+				dispatch(fetchPokemonsByPage({ page: INITIAL_PAGE }))
+			}
+		/>
 	) : (
 		<Grid>
 			{pokemonList.map((pokemon) => (
@@ -38,10 +47,6 @@ function PokemonsPage() {
 			))}
 		</Grid>
 	)
-
-	function isPokemonListEmpty() {
-		return pokemonList.length === 0
-	}
 }
 
 export default PokemonsPage
