@@ -1,9 +1,12 @@
+import { Link } from 'react-router-dom'
 import { Container, Logo } from './styles'
 
 function Header() {
 	return (
 		<Container>
-			<Logo src='/logo.png' alt='Pokedex logo' />
+			<Link to='/'>
+				<Logo src='/logo.png' alt='Pokedex logo' />
+			</Link>
 		</Container>
 	)
 }
