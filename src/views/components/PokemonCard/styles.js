@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 import Card from '../Card'
 
 export const pokemonCardWidth = {
@@ -10,6 +11,13 @@ const pokemonCardHeight = {
 	value: 8.5663,
 	unit: 'em'
 }
+
+const imageMarginBottom = '7px'
+
+export const PokemonLink = styled(Link)`
+	outline: none;
+	text-decoration: none;
+`
 
 export const Container = styled(Card)`
 	position: relative;
@@ -34,7 +42,24 @@ export const Content = styled.div`
 export const Image = styled.img`
 	max-width: 97%;
 	height: auto;
-	margin-bottom: 7px;
+	margin-bottom: ${imageMarginBottom};
+`
+
+export const ImagePlaceholder = styled.div`
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 90%;
+	min-height: 70%;
+	margin-bottom: ${imageMarginBottom};
+	background-color: gray;
+	border-radius: 20px;
+`
+
+export const ImagePlaceholderText = styled.span`
+	font-size: 16px;
+	color: ${(props) => props.theme.primaryTextColor};
+	text-transform: capitalize;
 `
 
 export const Name = styled.span`
