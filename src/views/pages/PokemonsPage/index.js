@@ -27,6 +27,7 @@ function PokemonsPage() {
 
 	useEffect(() => {
 		if (!nextPage) dispatchPokemonsRequest()
+		// eslint-disable-next-line
 	}, [])
 
 	return isPending && isInitialPageRequest ? (

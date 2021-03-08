@@ -28,6 +28,7 @@ function PokemonDetailsPage() {
 	useEffect(() => {
 		console.log(pokemonName)
 		if (pokemonName) dispatch(fetchPokemonDetails({ name: pokemonName }))
+		// eslint-disable-next-line
 	}, [pokemonName])
 
 	return isPending ? (

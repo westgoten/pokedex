@@ -25,6 +25,7 @@ function InfiniteScrollDetector() {
 				dispatch(fetchPokemonsByPage({ page: nextPage }))
 			}
 		},
+		// eslint-disable-next-line
 		[isPending, error, nextPage]
 	)
 
