@@ -65,7 +65,7 @@ export const ImagePlaceholderText = styled.span`
 export const Name = styled.span`
 	font-size: 14px;
 	font-weight: 700;
-	font-family: Inter, Roboto, default;
+	font-family: ${(props) => props.theme.primaryFontFamily};
 	line-height: 20px;
 	color: ${(props) => props.theme.primaryTextColor};
 	text-transform: capitalize;

@@ -29,3 +29,5 @@ export const COLORS_IN_ORDER = [
 	'#CC4A33',
 	'#408271'
 ]
+
+export const DEFAULT_COLOR = '#CC4A33'

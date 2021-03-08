@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { POKEMON_PATH } from '../../../utils/consts/routeNames'
+import getFormattedPokemonName from '../../../utils/getFormattedPokemonName'
 import {
 	PokemonLink,
 	Container,
@@ -31,7 +32,7 @@ function PokemonCard({ name, imageUrl, color, ...props }) {
 							</ImagePlaceholderText>
 						</ImagePlaceholder>
 					)}
-					<Name>{name.split('-').join(' ')}</Name>
+					<Name>{getFormattedPokemonName(name)}</Name>
 				</Content>
 			</Container>
 		</PokemonLink>

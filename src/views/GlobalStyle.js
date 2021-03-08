@@ -29,12 +29,6 @@ const GlobalStyle = createGlobalStyle`
     }
 
     body { 
-        position: absolute;
-	    top: 0;
-	    left: 0;
-	    right: 0;
-	    bottom: 0;
-        margin: 0;
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
             'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
         -webkit-font-smoothing: antialiased;
@@ -45,10 +39,14 @@ const GlobalStyle = createGlobalStyle`
         font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
     }
 
-    #root {
-        width: 100%;
-        height: 100%;
-    }
+    body, html {
+	overflow: auto;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
 `
 
 export default GlobalStyle

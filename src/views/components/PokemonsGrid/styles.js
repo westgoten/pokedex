@@ -18,6 +18,20 @@ export const Grid = styled.div`
 	padding-right: 1.9375em;
 	font-size: ${DEFAULT_FONT_SIZE};
 
+	&::-webkit-scrollbar {
+		width: 12px;
+	}
+
+	&::-webkit-scrollbar-track {
+		background: #ffffff;
+		border-radius: 5px;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background: #d53b47;
+		border-radius: 5px;
+	}
+
 	@media (max-width: ${SMALL_WIDTH}) {
 		font-size: ${MEDIUM_FONT_SIZE};
 		overflow: visible;
