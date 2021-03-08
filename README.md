@@ -2,6 +2,8 @@
 
 _An encyclopedia of Pokémon species. Made with React & Redux._
 
+Take a look at [westpokedex.netlify.app](https://westpokedex.netlify.app)
+
 ## How to run
 
 To clone and run this application, you'll need Git, Node.js and NPM installed on your computer. From your command line:
